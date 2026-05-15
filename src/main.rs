@@ -121,6 +121,18 @@ fn main() {
         println!("Faiq Computer: done!");
     });
 
+    spawner.spawn(async {
+        println!("Faiq Computer: howdy2!");
+        TimerFuture::new(Duration::new(2, 0)).await;
+        println!("Faiq Computer: done2!");
+    });
+
+    spawner.spawn(async {
+        println!("Faiq Computer: howdy3!");
+        TimerFuture::new(Duration::new(2, 0)).await;
+        println!("Faiq Computer: done3!");
+    });
+
     println!("Faiq Computer: hey hey!");
 
     drop(spawner);
